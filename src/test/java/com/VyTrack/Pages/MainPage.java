@@ -12,6 +12,18 @@ public class MainPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    // HomeButton
+    @FindBy (xpath = "//h1//a[@title='Fleet Management']") public WebElement homeButton;
+    @FindBy (xpath = "//div/a[@href='/pinbar/help']") public WebElement pinBarHelp;
+
+    // Top right icons
+    @FindBy (xpath = "//a[@class='help no-hash']") public WebElement getHelpIcon;
+
+    // Warning Message
+    @FindBy (xpath = "//div[@class='message']") public WebElement warningMessage;
+
+    // Warning message close button
+    @FindBy (xpath = "//button[@class='close']") public WebElement warningCloseBtn;
     //Main Menu webElements
     @FindBy(xpath = "//span[@class='title title-level-1']")
     public List<WebElement> allModules;
