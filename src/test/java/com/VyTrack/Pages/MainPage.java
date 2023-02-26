@@ -32,21 +32,21 @@ public class MainPage {
     //Main Menu webElements
     @FindBy(xpath = "//span[@class='title title-level-1']")
     public List<WebElement> allModules;
-    @FindBy(xpath = "(//span[@class='title title-level-1'])[1]")
+    @FindBy(xpath = "//div[@id='main-menu']/ul/li/a/span[contains(text(),'Dashboard')]")
     public WebElement dashBoards;
-    @FindBy(xpath = "(//span[@class='title title-level-1'])[2]")
+    @FindBy(xpath = "//div[@id='main-menu']/ul/li/a/span[contains(text(),'Fleet')]")
     public WebElement fleet;
-    @FindBy(xpath = "(//span[@class='title title-level-1'])[3]")
+    @FindBy(xpath = "//div[@id='main-menu']/ul/li/a/span[contains(text(),'Customers')]")
     public WebElement customers;
-    @FindBy(xpath = "(//span[@class='title title-level-1'])[4]")
+    @FindBy(xpath = "//div[@id='main-menu']/ul/li/a/span[contains(text(),'Sales')]")
     public WebElement sales;
-    @FindBy(xpath = "(//span[@class='title title-level-1'])[5]")
+    @FindBy(xpath = "//div[@id='main-menu']/ul/li/a/span[contains(text(),'Activities')]")
     public WebElement activities;
-    @FindBy(xpath = "(//span[@class='title title-level-1'])[6]")
+    @FindBy(xpath = "//div[@id='main-menu']/ul/li/a/span[contains(text(),'Marketing')]")
     public WebElement marketing;
-    @FindBy(xpath = "(//span[@class='title title-level-1'])[7]")
+    @FindBy(xpath = "//div[@id='main-menu']/ul/li/a/span[contains(text(),'Report')]")
     public WebElement reportsAndSegments;
-    @FindBy(xpath = "(//span[@class='title title-level-1'])[8]")
+    @FindBy(xpath = "//div[@id='main-menu']/ul/li/a/span[contains(text(),'System')]")
     public WebElement systems;
 
 
