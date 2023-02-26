@@ -17,6 +17,9 @@ public class PinBar {
     public WebElement Image;
 
     @FindBy(xpath = "//button[@class=\"btn minimize-button\"]")
-    public WebElement PinBar;
+    public WebElement PinBarButton;
+
+    @FindBy(xpath = "//li[@class='pin-holder active']/a[text()='How To Use Pinbar']")
+    public WebElement PinHolder;
 
 }
