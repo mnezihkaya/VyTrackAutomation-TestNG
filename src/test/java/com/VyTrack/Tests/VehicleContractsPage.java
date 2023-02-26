@@ -18,13 +18,13 @@ public class VehicleContractsPage extends TestBaseWithDataProvider {
     //Expected title: All - Vehicle Contract - Entities - System - Car - Entities - System.
 
     @Test(dataProvider = "managers")
-    public void VehicleContractsManager(String username){
+    public void VehicleContractsManager(String username) {
 
         LogInPage.login(username);
-        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),10);
-        Actions actions=new Actions(Driver.getDriver());
-        MainPage mainPage=new MainPage();
-        VehicleContract vehicleContract=new VehicleContract();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        Actions actions = new Actions(Driver.getDriver());
+        MainPage mainPage = new MainPage();
+        VehicleContract vehicleContract = new VehicleContract();
 
 
         //go to vehicle ContractsPage
@@ -34,9 +34,35 @@ public class VehicleContractsPage extends TestBaseWithDataProvider {
         mainPage.vehicleContracts.click();
 
         //validate Title
-       wait.until(ExpectedConditions.visibilityOf(vehicleContract.tableCell));
-       Utilities.sleep(1);
-       Utilities.verifyTitle("All - Vehicle Contract - Entities - System - Car - Entities - System");
+        wait.until(ExpectedConditions.visibilityOf(vehicleContract.tableCell));
+        Utilities.sleep(1);
+        Utilities.verifyTitle("All - Vehicle Contract - Entities - System - Car - Entities - System");
+
+
+    }
+
+    @Test(dataProvider = "drivers")
+    public void VehicleContractsDrivers(String username) {
+        //  Drivers should NOT able to access the Vehicle contracts page, the app should display
+        // “do not have permission to perform this action.
+
+        LogInPage.login(username);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        Actions actions = new Actions(Driver.getDriver());
+        MainPage mainPage = new MainPage();
+
+
+        //go to vehicle ContractsPage
+        wait.until(ExpectedConditions.visibilityOf(mainPage.fleet));
+        actions.moveToElement(mainPage.fleet).perform();
+        wait.until(ExpectedConditions.visibilityOf(mainPage.vehicleContracts));
+        mainPage.vehicleContracts.click();
+
+        //validate Drivers see the error message
+        Assert.assertTrue(mainPage.warningMessage.isDisplayed());
+        String actualMessage = mainPage.warningMessage.getText();
+        String expectedMessage = "You do not have permission to perform this action.";
+        Assert.assertEquals(actualMessage, expectedMessage);
 
 
     }
