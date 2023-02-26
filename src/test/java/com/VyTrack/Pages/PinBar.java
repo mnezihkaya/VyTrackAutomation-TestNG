@@ -11,15 +11,15 @@ public class PinBar {
     }
 
     @FindBy(xpath = "//*[@id=\"container\"]/div[2]/div/h3")
-    public WebElement HeadLine;
+    public WebElement headLine;
 
     @FindBy(xpath = "//img")
-    public WebElement Image;
+    public WebElement image;
 
     @FindBy(xpath = "//button[@class=\"btn minimize-button\"]")
-    public WebElement PinBarButton;
+    public WebElement pinBarButton;
 
     @FindBy(xpath = "//li[@class='pin-holder active']/a[text()='How To Use Pinbar']")
-    public WebElement PinHolder;
+    public WebElement pinHolder;
 
 }

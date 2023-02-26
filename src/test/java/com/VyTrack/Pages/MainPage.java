@@ -13,220 +13,76 @@ public class MainPage {
     }
 
     // HomeButton
-    @FindBy (xpath = "//h1//a[@title='Fleet Management']") public WebElement homeButton;
-    @FindBy (xpath = "//div/a[@href='/pinbar/help']") public WebElement pinBarHelp;
+    @FindBy(xpath = "//h1//a[@title='Fleet Management']")
+    public WebElement homeButton;
+    @FindBy(xpath = "//div/a[@href='/pinbar/help']")
+    public WebElement pinBarHelp;
 
     // Top right icons
-    @FindBy (xpath = "//a[@class='help no-hash']") public WebElement getHelpIcon;
+    @FindBy(xpath = "//a[@class='help no-hash']")
+    public WebElement getHelpIcon;
 
     // Warning Message
-    @FindBy (xpath = "//div[@class='message']") public WebElement warningMessage;
+    @FindBy(xpath = "//div[@class='message']")
+    public WebElement warningMessage;
 
     // Warning message close button
-    @FindBy (xpath = "//button[@class='close']") public WebElement warningCloseBtn;
+    @FindBy(xpath = "//button[@class='close']")
+    public WebElement warningCloseBtn;
     //Main Menu webElements
     @FindBy(xpath = "//span[@class='title title-level-1']")
     public List<WebElement> allModules;
     @FindBy(xpath = "(//span[@class='title title-level-1'])[1]")
-    public WebElement DashBoards;
+    public WebElement dashBoards;
     @FindBy(xpath = "(//span[@class='title title-level-1'])[2]")
-    public WebElement Fleet;
+    public WebElement fleet;
     @FindBy(xpath = "(//span[@class='title title-level-1'])[3]")
-    public WebElement Customers;
+    public WebElement customers;
     @FindBy(xpath = "(//span[@class='title title-level-1'])[4]")
-    public WebElement Sales;
+    public WebElement sales;
     @FindBy(xpath = "(//span[@class='title title-level-1'])[5]")
-    public WebElement Activities;
+    public WebElement activities;
     @FindBy(xpath = "(//span[@class='title title-level-1'])[6]")
-    public WebElement Marketing;
+    public WebElement marketing;
     @FindBy(xpath = "(//span[@class='title title-level-1'])[7]")
-    public WebElement ReportsAndSegments;
+    public WebElement reportsAndSegments;
     @FindBy(xpath = "(//span[@class='title title-level-1'])[8]")
-    public WebElement Systems;
+    public WebElement systems;
 
 
     //Dashboards sub webElements
     @FindBy(xpath = "//span[text()=\"Dashboard\"]")
-    public WebElement Dashboard;
+    public WebElement dashboard;
     @FindBy(xpath = "//span[text()=\"Manage Dashboards\"]")
-    public WebElement ManageDashboards;
+    public WebElement manageDashboards;
 
     // Fleet sub webElements
     @FindBy(xpath = "//span[text()=\"Vehicles\"]")
-    public WebElement Vehicles;
+    public WebElement vehicles;
     @FindBy(xpath = "//span[text()=\"Vehicle Odometer\"]")
-    public WebElement VehicleOdometer;
+    public WebElement vehicleOdometer;
     @FindBy(xpath = "//span[text()=\"Vehicle Costs\"]")
-    public WebElement VehicleCosts;
+    public WebElement vehicleCosts;
     @FindBy(xpath = "//span[text()=\"Vehicle Contracts\"]")
-    public WebElement VehicleContracts;
+    public WebElement vehicleContracts;
     @FindBy(xpath = "//span[text()=\"Vehicles Fuel Logs\"]")
-    public WebElement VehiclesFuelLogs;
+    public WebElement vehiclesFuelLogs;
     @FindBy(xpath = "//span[text()=\"Vehicle Services Logs\"]")
-    public WebElement VehicleServicesLogs;
+    public WebElement vehicleServicesLogs;
     @FindBy(xpath = "//span[text()=\"Vehicles Model\"]")
-    public WebElement VehiclesModel;
+    public WebElement vehiclesModel;
 
     // Activities sub elements
-    @FindBy (xpath = "//span[text()='Calendar Events']") public WebElement activitiesSubCalendar;
+    @FindBy(xpath = "//span[text()='Calendar Events']")
+    public WebElement activitiesSubCalendar;
 
     // Customers sub elements
-    @FindBy (xpath = "//span[text()='Accounts']") public WebElement customersSubAccounts;
+    @FindBy(xpath = "//span[text()='Accounts']")
+    public WebElement customersSubAccounts;
 
     // Marketing sub elements
-    @FindBy (xpath = "//span[text()='Campaigns']") public WebElement marketingSubCampaigns;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//span[text()='Campaigns']")
+    public WebElement marketingSubCampaigns;
 
 
 }

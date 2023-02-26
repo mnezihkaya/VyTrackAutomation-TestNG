@@ -30,19 +30,19 @@ public class PinBarAndImage extends TestBaseWithDataProvider {
 
 
         // Validate user sees “How To Use Pin bar”
-        wait.until(ExpectedConditions.visibilityOf(pinBar.HeadLine));
+        wait.until(ExpectedConditions.visibilityOf(pinBar.headLine));
         String expectedTitle = "How To Use Pinbar";
-        String actualTitle = pinBar.HeadLine.getText();
+        String actualTitle = pinBar.headLine.getText();
         Assert.assertEquals(actualTitle, expectedTitle);
 
 
         // Use pin icon on the right top corner of the page to create fast access link in the pin bar.
-        wait.until(ExpectedConditions.visibilityOf(pinBar.PinBarButton));
-        pinBar.PinBarButton.click();
+        wait.until(ExpectedConditions.visibilityOf(pinBar.pinBarButton));
+        pinBar.pinBarButton.click();
 
         // Validate page is pinned to the Top
-        wait.until(ExpectedConditions.visibilityOf(pinBar.PinHolder));
-        Assert.assertTrue(pinBar.PinHolder.isDisplayed());
+        wait.until(ExpectedConditions.visibilityOf(pinBar.pinHolder));
+        Assert.assertTrue(pinBar.pinHolder.isDisplayed());
 
         // Remove pinned page and validate it no more displayed
         wait.until(ExpectedConditions.visibilityOf(mainPage.pinBarHelp));
@@ -65,9 +65,9 @@ public class PinBarAndImage extends TestBaseWithDataProvider {
         wait.until(ExpectedConditions.visibilityOf(mainPage.pinBarHelp));
         mainPage.pinBarHelp.click();
 
-        wait.until(ExpectedConditions.visibilityOf(pinBar.Image));
-        Assert.assertTrue(pinBar.Image.isDisplayed());
-        String actualSource = pinBar.Image.getAttribute("src").replace("https://qa1.vytrack.com", "");
+        wait.until(ExpectedConditions.visibilityOf(pinBar.image));
+        Assert.assertTrue(pinBar.image.isDisplayed());
+        String actualSource = pinBar.image.getAttribute("src").replace("https://qa1.vytrack.com", "");
         String expectedSource = "/bundles/oronavigation/images/pinbar-location.jpg";
         Assert.assertEquals(actualSource, expectedSource);
 

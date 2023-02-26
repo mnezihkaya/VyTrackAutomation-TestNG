@@ -29,13 +29,13 @@ public class LogInPage {
     public WebElement logInButton;
 
     @FindBy(xpath = "//span[@class='custom-checkbox__icon']")
-    public WebElement RememberMeButton;
+    public WebElement rememberMeButton;
 
     @FindBy(xpath = "//a[@href='/user/reset-request']")
-    public WebElement ForgotYourPassword;
+    public WebElement forgotYourPassword;
 
     @FindBy(xpath = "//a[@href='/user/logout']")
-    public WebElement LogOut;
+    public WebElement logOut;
 
 
     //overwrite Login method with different
