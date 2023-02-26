@@ -2,11 +2,18 @@ package com.VyTrack.Tests;
 
 import com.VyTrack.Utilities.ConfigurationReader;
 import com.VyTrack.Utilities.Driver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 
 public class TestBaseWithDataProvider {
+
+    private static final String env = ConfigurationReader.getProperty("env1");
+    @BeforeMethod
+    public void setUp() {
+        //Go to VY TRACK Page
+        Driver.getDriver().get(env);
+    }
+
 
     @DataProvider(name = "DifferentUserTypes")
     public Object[][] DifferentUserTypes() {
