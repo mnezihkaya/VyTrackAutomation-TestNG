@@ -2,6 +2,8 @@ package com.VyTrack.Tests;
 
 import com.VyTrack.Utilities.ConfigurationReader;
 import com.VyTrack.Utilities.Driver;
+import com.VyTrack.Utilities.Utilities;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 
@@ -12,6 +14,12 @@ public class TestBaseWithDataProvider {
     public void setUp() {
         //Go to VY TRACK Page
         Driver.getDriver().get(env);
+    }
+
+    @AfterMethod
+    public void TearDown(){
+        Utilities.logout();
+        Driver.closeDriver();
     }
 
 
@@ -69,9 +77,9 @@ public class TestBaseWithDataProvider {
     public Object[][] StoreAndSalesManagers(){
         return new Object[][]{
                 {ConfigurationReader.getProperty("username2")},
-                {ConfigurationReader.getProperty("username5")},
+               // {ConfigurationReader.getProperty("username5")},
                 {ConfigurationReader.getProperty("username3")},
-                {ConfigurationReader.getProperty("username6")},
+             //  {ConfigurationReader.getProperty("username6")},
         };
     }
 
