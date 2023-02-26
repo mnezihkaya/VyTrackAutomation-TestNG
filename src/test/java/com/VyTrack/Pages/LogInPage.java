@@ -12,6 +12,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LogInPage {
 
+    private static final String userName = ConfigurationReader.getProperty("username2");
+    private static final String passWord = ConfigurationReader.getProperty("password");
+
     public LogInPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -23,7 +26,7 @@ public class LogInPage {
     public WebElement password;
 
     @FindBy(id = "_submit")
-    public WebElement LogInButton;
+    public WebElement logInButton;
 
     @FindBy(xpath = "//span[@class='custom-checkbox__icon']")
     public WebElement RememberMeButton;
@@ -31,6 +34,60 @@ public class LogInPage {
     @FindBy(xpath = "//a[@href='/user/reset-request']")
     public WebElement ForgotYourPassword;
 
+    @FindBy(xpath = "//a[@href='/user/logout']")
+    public WebElement LogOut;
+
+
+    //overwrite Login method with different
+    public static void login() {
+        // Calling webElements from Login Page
+        LogInPage loginPage = new LogInPage();
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+
+        // Enter valid username
+        wait.until(ExpectedConditions.visibilityOf(loginPage.username));
+        loginPage.username.clear();
+        loginPage.username.sendKeys(userName);
+
+        // Enter valid password
+        wait.until(ExpectedConditions.visibilityOf(loginPage.password));
+        loginPage.password.clear();
+        loginPage.password.sendKeys(passWord);
+        ;
+
+        // Click to Log In button
+        wait.until(ExpectedConditions.visibilityOf(loginPage.logInButton));
+        loginPage.logInButton.click();
+
+        // Verify login successful
+
+    }
+
+    public static void login(String username) {
+        // Calling webElements from Login Page
+        LogInPage loginPage = new LogInPage();
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+
+        // Enter valid username
+        wait.until(ExpectedConditions.visibilityOf(loginPage.username));
+        loginPage.username.clear();
+        loginPage.username.sendKeys(username);
+
+        // Enter valid password
+        wait.until(ExpectedConditions.visibilityOf(loginPage.password));
+        loginPage.password.clear();
+        loginPage.password.sendKeys(passWord);
+        ;
+
+        // Click to Log In button
+        wait.until(ExpectedConditions.visibilityOf(loginPage.logInButton));
+        loginPage.logInButton.click();
+
+        // Verify login successful
+
+    }
 
     public static void LogIn(String username, String password) {
 
@@ -46,8 +103,10 @@ public class LogInPage {
         logInpage.password.sendKeys(password);
 
         //click to login Button
-        wait.until(ExpectedConditions.visibilityOf(logInpage.LogInButton));
-        logInpage.LogInButton.click();
+        wait.until(ExpectedConditions.visibilityOf(logInpage.logInButton));
+        logInpage.logInButton.click();
         //verify login is successful
     }
+
+
 }
