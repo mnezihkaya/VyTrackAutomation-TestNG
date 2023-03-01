@@ -23,7 +23,7 @@ public class Calender {
     @FindBy(xpath = "//span[@id=\"temp-validation-name-9848-error\"]")
     public WebElement errorMessage;
 
-    @FindBy(xpath = "//input[@id=\"oro_calendar_event_form_title-uid-63feb54f9759c\"]")
+    @FindBy(xpath = "//input[@name='oro_calendar_event_form[title]']")
     public WebElement inputTitle;
 
     @FindBy(xpath = "//iframe")
