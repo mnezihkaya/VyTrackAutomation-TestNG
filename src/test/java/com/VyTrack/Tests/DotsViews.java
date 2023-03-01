@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 public class DotsViews extends TestBaseWithDataProvider {
     //users should see “view, edit, delete” when they hover the mouse to the threeDots “...”.
-    @Test(dataProvider = "userTypes")
+    @Test(dataProvider = "DifferentUserTypes")
     public void testVehicleIcons(String username) {
         LogInPage logInPage = new LogInPage();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
@@ -23,8 +23,10 @@ public class DotsViews extends TestBaseWithDataProvider {
         VehiclePage vehiclePage = new VehiclePage();
 
         //navigate vehicle page
+        LogInPage.login(username);
+        wait.until(ExpectedConditions.visibilityOf(mainPage.fleet));
         actions.moveToElement(mainPage.fleet).perform();
-        mainPage.fleet.click();
+        mainPage.vehicles.click();
 
         //hover over the threeDots
         wait.until(ExpectedConditions.visibilityOf(vehiclePage.lastCell));
