@@ -14,7 +14,7 @@ public class Calender {
     @FindBy(xpath = "//a[@title=\"Create Calendar event\"]")
     public WebElement createEvent;
 
-    @FindBy(xpath = "//div[@class=\"controls\"]//input[@id=\"recurrence-repeat-view9796\"]")
+    @FindBy(xpath = "//input[@data-name='recurrence-repeat']")
     public WebElement repeatBox;
 
     @FindBy(xpath = "//input[@class='recurrence-subview-control__number']")
