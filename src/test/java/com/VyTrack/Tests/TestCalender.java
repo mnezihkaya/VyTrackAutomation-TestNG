@@ -162,4 +162,45 @@ public class TestCalender extends TestBaseWithDataProvider {
         String expectedMessage = "The value have not to be more than 99.";
         Assert.assertEquals(actualMessage, expectedMessage);
     }
+
+    @Test(dataProvider = "DifferentUserTypes")
+    public void TestCalenderMessage(String username) {
+        //Users see error messages for entering invalid integers.
+        // If enters less than 1 —> user should see “The value have not to be less than 1.”
+
+        LogInPage.login(username);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        Actions actions = new Actions(Driver.getDriver());
+        MainPage mainpage = new MainPage();
+        Calender calender = new Calender();
+
+
+        // Navigate calenderPAge
+        wait.until(ExpectedConditions.visibilityOf(mainpage.activities));
+        actions.moveToElement(mainpage.activities).perform();
+        mainpage.activitiesSubCalendar.click();
+
+
+        //Click Create event
+        wait.until(ExpectedConditions.visibilityOf(calender.createEvent));
+        calender.createEvent.click();
+
+        // Switch to iframe
+        Driver.getDriver().switchTo().frame(calender.iFrame);
+
+
+        // Enter a text to message body
+        String text = "New text " + Driver.getDriver();
+        calender.textBody.sendKeys(text);
+
+        // Validate a text entered to body
+        String actualText = calender.message.getText();
+        Assert.assertEquals(actualText, text);
+
+
+        // Switch back to main Dome
+        Driver.getDriver().switchTo().parentFrame();
+    }
+
+
 }
