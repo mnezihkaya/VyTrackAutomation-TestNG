@@ -1,6 +1,5 @@
 package com.VyTrack.Tests;
 
-import com.VyTrack.Pages.Calender;
 import com.VyTrack.Pages.LogInPage;
 import com.VyTrack.Pages.MainPage;
 import com.VyTrack.Utilities.Driver;
@@ -12,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class TestCalender extends TestBaseWithDataProvider {
+public class Calender extends TestBaseWithDataProvider {
 
     //user should see the number “1” by default at repeatBox
     @Test(dataProvider = "DifferentUserTypes")
@@ -23,7 +22,7 @@ public class TestCalender extends TestBaseWithDataProvider {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         Actions actions = new Actions(Driver.getDriver());
         MainPage mainpage = new MainPage();
-        Calender calender = new Calender();
+        com.VyTrack.Pages.Calender calender = new com.VyTrack.Pages.Calender();
 
 
         // Navigate calenderPAge
@@ -56,7 +55,7 @@ public class TestCalender extends TestBaseWithDataProvider {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         Actions actions = new Actions(Driver.getDriver());
         MainPage mainpage = new MainPage();
-        Calender calender = new Calender();
+        com.VyTrack.Pages.Calender calender = new com.VyTrack.Pages.Calender();
 
 
         // Navigate calenderPAge
@@ -94,7 +93,7 @@ public class TestCalender extends TestBaseWithDataProvider {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         Actions actions = new Actions(Driver.getDriver());
         MainPage mainpage = new MainPage();
-        Calender calender = new Calender();
+        com.VyTrack.Pages.Calender calender = new com.VyTrack.Pages.Calender();
 
 
         // Navigate calenderPAge
@@ -134,7 +133,7 @@ public class TestCalender extends TestBaseWithDataProvider {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         Actions actions = new Actions(Driver.getDriver());
         MainPage mainpage = new MainPage();
-        Calender calender = new Calender();
+        com.VyTrack.Pages.Calender calender = new com.VyTrack.Pages.Calender();
 
 
         // Navigate calenderPAge
@@ -172,7 +171,7 @@ public class TestCalender extends TestBaseWithDataProvider {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         Actions actions = new Actions(Driver.getDriver());
         MainPage mainpage = new MainPage();
-        Calender calender = new Calender();
+        com.VyTrack.Pages.Calender calender = new com.VyTrack.Pages.Calender();
 
 
         // Navigate calenderPAge
