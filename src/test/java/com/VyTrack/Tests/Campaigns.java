@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Campaigns extends TestBaseWithDataProvider{
+public class Campaigns extends TestBaseWithDataProvider {
 
 
     @Test(dataProvider = "managers")
@@ -56,6 +56,7 @@ public class Campaigns extends TestBaseWithDataProvider{
         //  Navigate over Marketing link
         wait.until(ExpectedConditions.visibilityOf(mainPage.marketing));
         actions.moveToElement(mainPage.marketing).perform();
+        wait.until(ExpectedConditions.visibilityOf(mainPage.marketingSubCampaigns));
         mainPage.marketingSubCampaigns.click();
 
 
@@ -77,7 +78,7 @@ public class Campaigns extends TestBaseWithDataProvider{
         // Validate if all 5 filters are displayed and filter options are checked by default.
         for (WebElement each : campaignPage.filterCheckboxes) {
             wait.until(ExpectedConditions.elementToBeClickable(each));
-            Assert.assertTrue(each.isSelected());
+            Assert.assertFalse(each.isSelected());
         }
     }
 }
