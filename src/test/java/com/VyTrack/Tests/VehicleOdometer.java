@@ -1,9 +1,7 @@
 package com.VyTrack.Tests;
 
-import com.VyTrack.Pages.Calender;
 import com.VyTrack.Pages.LogInPage;
 import com.VyTrack.Pages.MainPage;
-import com.VyTrack.Pages.VehicleOdometer;
 import com.VyTrack.Utilities.Driver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TestVehicleOdometer extends TestBaseWithDataProvider {
+public class VehicleOdometer extends TestBaseWithDataProvider {
 
     @Test(dataProvider = "managers")
-    public void testOdometer(String username) {
+    public void Odometer(String username) {
 
         // Store and Sales managers should see an error message
         // “You do not have permission to perform this action.”
@@ -52,7 +50,7 @@ public class TestVehicleOdometer extends TestBaseWithDataProvider {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         Actions actions = new Actions(Driver.getDriver());
         MainPage mainpage = new MainPage();
-        VehicleOdometer vehicleOdometer = new VehicleOdometer();
+        com.VyTrack.Pages.VehicleOdometer vehicleOdometer = new com.VyTrack.Pages.VehicleOdometer();
 
 
         //  Navigate over Fleet link
