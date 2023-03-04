@@ -2,7 +2,7 @@ package com.VyTrack.Tests;
 
 import com.VyTrack.Pages.LogInPage;
 import com.VyTrack.Pages.MainPage;
-import com.VyTrack.Pages.VehicleContract;
+import com.VyTrack.Pages.VehicleContractPage;
 import com.VyTrack.Utilities.Driver;
 import com.VyTrack.Utilities.Utilities;
 import org.openqa.selenium.interactions.Actions;
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class VehicleContractsPage extends TestBaseWithDataProvider {
+public class VehicleContracts extends TestBaseWithDataProvider {
 
     //Store managers and Sales managers access the Vehicle contracts page.
     //Expected URL: https://qa2.vytrack.com/entity/Extend_Entity_VehicleContract
@@ -24,7 +24,7 @@ public class VehicleContractsPage extends TestBaseWithDataProvider {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         Actions actions = new Actions(Driver.getDriver());
         MainPage mainPage = new MainPage();
-        VehicleContract vehicleContract = new VehicleContract();
+        VehicleContractPage vehicleContract = new VehicleContractPage();
 
 
         //go to vehicle ContractsPage
@@ -44,7 +44,7 @@ public class VehicleContractsPage extends TestBaseWithDataProvider {
     @Test(dataProvider = "drivers")
     public void VehicleContractsDrivers(String username) {
         //  Drivers should NOT able to access the Vehicle contracts page, the app should display
-        // “do not have permission to perform this action.
+        // do not have permission to perform this action.
 
         LogInPage.login(username);
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
